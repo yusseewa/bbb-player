@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Video Player</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="player-wrap" style="width:640px;">
+  <div class="video-frame">
+    <video id="video" src="https://video.twimg.com/amplify_video/2032302389210791936/vid/avc1/1080x720/rcZmbjBGtb6vZdeG.mp4"></video>
+  </div>
+
+  <div class="controls">
+    <button class="ctrl-btn play-btn" id="playBtn" aria-label="Play"></button>
+    <button class="ctrl-btn pause-btn" id="pauseBtn" aria-label="Pause"></button>
+    <div class="progress-bar" id="progressBar">
+      <div class="progress-fill" id="progressFill"></div>
+      <div class="progress-knob" id="progressKnob"></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
