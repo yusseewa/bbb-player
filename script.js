@@ -38,3 +38,10 @@ let dragging = false;
 progressKnob.addEventListener('mousedown', () => dragging = true);
 document.addEventListener('mousemove', (e) => { if (dragging) seek(e); });
 document.addEventListener('mouseup', () => dragging = false);
+
+video.addEventListener('play', () => {
+    document.title = "BANG BANG BANG - Playing";
+});
+video.addEventListener('pause', () => {
+    document.title = "BANG BANG BANG";
+});
