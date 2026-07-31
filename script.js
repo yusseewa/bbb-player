@@ -18,6 +18,7 @@ if (e.code === 'Space') {
 }
 });
 
+// Progress Bar
 video.addEventListener('timeupdate', () => {
 if (video.duration) {
     const pct = (video.currentTime / video.duration) * 100;
@@ -39,6 +40,18 @@ progressKnob.addEventListener('mousedown', () => dragging = true);
 document.addEventListener('mousemove', (e) => { if (dragging) seek(e); });
 document.addEventListener('mouseup', () => dragging = false);
 
+// Fullscreen Feature
+document.addEventListener('keydown', (e) => {
+  if (e.code === 'KeyF') {
+    if (!document.fullscreenElement) {
+      document.querySelector('.player-wrap').requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  }
+});
+
+// Change document title
 video.addEventListener('play', () => {
     document.title = "BANG BANG BANG - Playing";
 });
