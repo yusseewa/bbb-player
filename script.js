@@ -22,7 +22,6 @@ if (e.code === 'Space') {
 video.addEventListener('timeupdate', () => {
 if (video.duration) {
     const pct = (video.currentTime / video.duration) * 100;
-    progressFill.style.width = pct + '%';
     progressKnob.style.left = pct + '%';
 }
 });
@@ -39,6 +38,15 @@ let dragging = false;
 progressKnob.addEventListener('mousedown', () => dragging = true);
 document.addEventListener('mousemove', (e) => { if (dragging) seek(e); });
 document.addEventListener('mouseup', () => dragging = false);
+
+document.addEventListener('keydown', (e) => {
+  if (e.code === 'ArrowLeft') {
+    video.currentTime = video.currentTime - 1;
+  }
+  if (e.code === 'ArrowRight') {
+    video.currentTime = video.currentTime + 1;
+  }
+});
 
 // Fullscreen Feature
 document.addEventListener('keydown', (e) => {
